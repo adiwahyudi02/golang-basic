@@ -16,6 +16,18 @@ type Customer struct {
 	Age int
 }
 
+/*
+	Struct Method
+
+	A struct is a data type like any other and can be used as a parameter for functions.
+	However, if we want to add behavior to structs, we can define methods for them,
+	making it seem like the struct “has” functions.
+	A method is essentially a function with a receiver, which associates it with a specific struct.
+*/
+func (customer Customer) sayHello(name string) {
+	fmt.Println("Hello", name, "my name is", customer.Name)
+}
+
 func main() {
 
 	/*
@@ -46,4 +58,9 @@ func main() {
 
 	customer3 := Customer{"Diding", "Jakarta", 22}
 	fmt.Println(customer3)
+
+
+	customer1.sayHello("Dodong")
+	customer2.sayHello("Dodong")
+	customer3.sayHello("Dodong")
 }
